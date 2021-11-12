@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ethers } from 'ethers'
 import Greeter from './artifacts/contracts/Greeter.sol/Greeter.json'
 // Update with the contract address logged out to the CLI when it was deployed 
-const greeterAddress = "0x0165878A594ca255338adfa4d48449f69242Eb8F"
+const greeterAddress = "0x610178dA211FEF7D417bC0e6FeD39F05609AD788"
 function App() {
   // store greeting in local state
   const [greeting, setGreetingValue] = useState()
