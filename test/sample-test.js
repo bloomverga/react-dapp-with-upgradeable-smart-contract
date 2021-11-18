@@ -1,10 +1,10 @@
 const { expect } = require("chai");
-const { ethers } = require("hardhat");
+const { ethers, upgrades } = require("hardhat");
 
 describe("Greeter", function () {
   it("Should return the new greeting once it's changed", async function () {
     const Greeter = await ethers.getContractFactory("Greeter");
-    const greeter = await Greeter.deploy("Hello, world!");
+    const greeter = await upgrades.deployProxy(Greeter,["Hello, world!"]);
     await greeter.deployed();
 
     expect(await greeter.greet()).to.equal("Hello, world!");
